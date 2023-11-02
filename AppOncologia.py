@@ -37,12 +37,12 @@ with right:
     texto = '<p></p><i><p style="font-family:Arial; font-size: 25px;">Datos patológicos</p></i>'
     st.write(texto,unsafe_allow_html = True)
 
-    enfermedad = st.text_input(label="Enfermedad actual", placeholder = "Escriba la principal patología del paciente")
-    otras_e = st.text_input(label="Otras patologías", placeholder = "Introduzca las patologías separadas por comas")
+    enfermedad = st.text_input(label="ENFERMEDAD ACTUAL", placeholder = "Escriba la principal patología del paciente")
+    otras_e = st.text_input(label="OTRAS PATOLOGÍAS", placeholder = "Introduzca las patologías separadas por comas")
 
     texto = '<p></p><i><p style="font-family:Arial; font-size: 25px;">Datos tratamiento</p></i>'
     st.write(texto,unsafe_allow_html = True)
-    tratamiento = st.text_input(label="Tratamiento", placeholder = "Introduzca los fármacos separados por comas")
+    tratamiento = st.text_input(label="TRATAMIENTO", placeholder = "Introduzca los fármacos separados por comas")
     farmacos = tratamiento.split(',')
     farmacos = [i.strip().lower() for i in farmacos]
 
