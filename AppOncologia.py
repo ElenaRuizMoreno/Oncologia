@@ -20,21 +20,21 @@ left, right = st.columns([1,1], gap="large")
 #==================================================================================================================================
 
 with left:
-    texto = '<p></p><i><p style="font-family:Cambria; font-size: 25px;">Datos identificativos del paciente</p></i>'
+    texto = '<p></p><i><p style="font-family:Arial; font-size: 25px;">Datos identificativos del paciente</p></i>'
     st.write(texto,unsafe_allow_html=True)
 
-    nombre = st.text_input(label="Nombre", placeholder = "Nombre")
-    apellidos = st.text_input(label="Apellidos", placeholder = "Introduzca los apellidos separados por un espacio")
-    nhi = st.text_input(label="Nº Historia Clínica", placeholder = "Nº Historia Clínica")
+    nombre = st.text_input(label="Nombre", placeholder = "Introduzca su nombre: ")
+    apellidos = st.text_input(label="Apellidos", placeholder = "Y sus apellidos: ")
+    nhi = st.text_input(label="Nº Historia Clínica", placeholder = "Nº Historia Clínica: ")
     sexo = st.selectbox("Sexo",['-','Hombre','Mujer','Otro'])
-    fecha_n = st.text_input(label="Fecha de nacimiento", placeholder = "(dd/mm/yyyy)")
+    fecha_n = st.text_input(label="Fecha de nacimiento: ", placeholder = "(dd/mm/yyyy)")
 
 #==================================================================================================================================
 #COLUMNA DERECHA
 #==================================================================================================================================
 
 with right:
-    texto = '<p></p><i><p style="font-family:Cambria; font-size: 25px;">Datos patológicos</p></i>'
+    texto = '<p></p><i><p style="font-family:Arial; font-size: 25px;">Datos patológicos</p></i>'
     st.write(texto,unsafe_allow_html = True)
 
     enfermedad = st.text_input(label="Enfermedad actual", placeholder = "Escriba la principal patología del paciente")
@@ -143,7 +143,7 @@ def BuscarFarmacosRelacionadosGen(gen):
 #CÓDIGO DE STREAMLIT
 #_________________________________________________________________________________________________________________________________
 
-texto = '<p></p><i><p style="font-family:Cambria; font-size: 25px;">Datos genéticos</p></i>'
+texto = '<p></p><i><p style="font-family:Arial; font-size: 25px;">Datos genéticos</p></i>'
 st.write(texto,unsafe_allow_html = True)
 
 col1, col2, col3, col4, col5, col6 = st.columns([1,1,1,1,1,1], gap="large")
@@ -166,27 +166,11 @@ with col3:
     alelo3_1 = st.selectbox("Alelo 1",['-']+lista3, key = 31)
     alelo3_2 = st.selectbox("Alelo 2",['-']+lista3, key = 32)
     
-with col4:
-    gen4 = st.text_input(label="Gen 4", placeholder = "Introduzca el gen")
-    lista4 = buscarAlelosGen(gen4)
-    alelo4_1 = st.selectbox("Alelo 1",['-']+lista4, key = 41)
-    alelo4_2 = st.selectbox("Alelo 2",['-']+lista4, key = 42)
+
     
-with col5:
-    gen5 = st.text_input(label="Gen 5", placeholder = "Introduzca el gen")
-    lista5 = buscarAlelosGen(gen5)
-    alelo5_1 = st.selectbox("Alelo 1",['-']+lista5, key = 51)
-    alelo5_2 = st.selectbox("Alelo 2",['-']+lista5, key = 52)
-    
-with col6:
-    gen6 = st.text_input(label="Gen 6", placeholder = "Introduzca el gen")
-    lista6 = buscarAlelosGen(gen1)
-    alelo6_1 = st.selectbox("Alelo 1",['-']+lista6, key = 61)
-    alelo6_2 = st.selectbox("Alelo 2",['-']+lista6, key = 62)
-    
-genes = [gen1,gen2,gen3,gen4,gen5,gen6]
-alelos1 = [alelo1_1,alelo2_1,alelo3_1,alelo4_1,alelo5_1,alelo6_1]
-alelos2 = [alelo1_2,alelo2_2,alelo3_2,alelo4_2,alelo5_2,alelo6_2]
+genes = [gen1,gen2,gen3]
+alelos1 = [alelo1_1,alelo2_1,alelo3_1]
+alelos2 = [alelo1_2,alelo2_2,alelo3_2]
 
 #==================================================================================================================================
 #OBTENCIÓN DE RESULTADOS
@@ -209,7 +193,7 @@ for x,y,z in zip(genes, alelos1, alelos2):
 #==================================================================================================================================
 #MOSTRAR RESULTADOS
 #==================================================================================================================================   
-texto = '<center><p style="font-family:Cambria; font-size: 35px;">Informe Final</p></center>'
+texto = '<center><p style="font-family:Arial; font-size: 35px;">Informe Final</p></center>'
 st.write(texto,unsafe_allow_html = True)
 #--------------------------------------------------------------------------------------------------------------------------
 texto = '<i><p style="font-family:Cambria; font-size: 22px;"><u>Fenotipo y recomendación de dosis</u></p></i>'
@@ -226,7 +210,7 @@ for i in recomendaciones:
             texto = '<p style="text-indent: 50px; font-family:Cambria; font-size: 15px;">El fenotipo para <b>'+x+'</b> es '+recomendaciones[i][x][0]+'. Recomendación clínica: '+recomendaciones[i][x][1]+' Fuente de información: <a href="'+recomendaciones[i][x][3]+'" target= "_blank">'+recomendaciones[i][x][2]+'</a></p>'
             st.write(texto,unsafe_allow_html = True)
 #--------------------------------------------------------------------------------------------------------------------------   
-texto = '<i><p style="font-family:Cambria; font-size: 22px;"><u>Interacciones con otros fármacos</u></p></i>'
+texto = '<i><p style="font-family:Arial; font-size: 22px;"><u>Interacciones con otros fármacos</u></p></i>'
 st.write(texto,unsafe_allow_html = True)
 
 for i in relaciones:
