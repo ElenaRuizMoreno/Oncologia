@@ -23,11 +23,11 @@ with left:
     texto = '<p></p><i><p style="font-family:Arial; font-size: 25px;">Datos identificativos del paciente</p></i>'
     st.write(texto,unsafe_allow_html=True)
 
-    nombre = st.text_input(label="Nombre", placeholder = "Introduzca su nombre: ")
-    apellidos = st.text_input(label="Apellidos", placeholder = "Y sus apellidos: ")
-    nhi = st.text_input(label="Nº Historia Clínica", placeholder = "Nº Historia Clínica: ")
-    sexo = st.selectbox("Sexo",['-','Hombre','Mujer','Otro'])
-    fecha_n = st.text_input(label="Fecha de nacimiento: ", placeholder = "(dd/mm/yyyy)")
+    nombre = st.text_input(label="NOMBRE", placeholder = "Introduzca su nombre: ")
+    apellidos = st.text_input(label="APELLIDOS", placeholder = "Y sus apellidos: ")
+    nhi = st.text_input(label="Nº HISTORIA CLÍNICA", placeholder = "Nº Historia Clínica: ")
+    sexo = st.selectbox("SEXO",['-','Hombre','Mujer','Otro'])
+    fecha_n = st.text_input(label="FECHA DE NACIMIENTO: ", placeholder = "(dd/mm/yyyy)")
 
 #==================================================================================================================================
 #COLUMNA DERECHA
