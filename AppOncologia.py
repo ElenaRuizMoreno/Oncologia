@@ -11,9 +11,9 @@ from fpdf import FPDF
 #CONFIGURACIÓN DE LA PÁGINA
 #==================================================================================================================================
 
-st.set_page_config(layout="wide", page_icon='Logo_pagina.png', page_title="PharmPrev")
+st.set_page_config(layout="wide", page_icon='Logo_pagina.jpg', page_title="Oncology")
 
-st.image("Logo.png")
+st.image("Logo.jpg")
 
 left, right = st.columns([1,1], gap="large")
 
