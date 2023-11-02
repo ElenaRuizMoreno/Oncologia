@@ -9,9 +9,9 @@ import base64
 #CONFIGURACIÓN DE LA PÁGINA
 #==================================================================================================================================
 
-st.set_page_config(layout="wide", page_icon='Logo_pagina.jpg', page_title="Oncology")
+st.set_page_config(layout="wide", page_icon='Logo_pagina.jpeg', page_title="Oncology")
 
-st.image("Logo.jpg")
+st.image("Logo.jpeg")
 
 left, right = st.columns([1,1], gap="large")
 
