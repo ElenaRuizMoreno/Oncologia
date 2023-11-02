@@ -40,7 +40,7 @@ with right:
     enfermedad = st.text_input(label="Enfermedad actual", placeholder = "Escriba la principal patología del paciente")
     otras_e = st.text_input(label="Otras patologías", placeholder = "Introduzca las patologías separadas por comas")
 
-    texto = '<p></p><i><p style="font-family:Cambria; font-size: 25px;">Datos tratamiento</p></i>'
+    texto = '<p></p><i><p style="font-family:Arial; font-size: 25px;">Datos tratamiento</p></i>'
     st.write(texto,unsafe_allow_html = True)
     tratamiento = st.text_input(label="Tratamiento", placeholder = "Introduzca los fármacos separados por comas")
     farmacos = tratamiento.split(',')
@@ -193,26 +193,26 @@ for x,y,z in zip(genes, alelos1, alelos2):
 #==================================================================================================================================
 #MOSTRAR RESULTADOS
 #==================================================================================================================================   
-texto = '<center><p style="font-family:Arial; font-size: 35px;">Informe Final</p></center>'
+texto = '<center><p style="font-family:Arial; font-size: 35px;">INFORMACIÓN EXTRAÍDA</p></center>'
 st.write(texto,unsafe_allow_html = True)
 #--------------------------------------------------------------------------------------------------------------------------
-texto = '<i><p style="font-family:Cambria; font-size: 22px;"><u>Fenotipo y recomendación de dosis</u></p></i>'
+texto = '<i><p style="font-family:Arial; font-size: 22px;"><u>FENOTIPO Y RECOMENDACIÓN DE DOSIS</u></p></i>'
 st.write(texto,unsafe_allow_html = True)
 
 for i in recomendaciones:
-    texto = '<p style="text-indent: 30px; font-family:Cambria; font-size: 18px;">En relación con el fármaco <b>'+i+'</b>:</p>'
+    texto = '<p style="text-indent: 30px; font-family:Arial; font-size: 18px;">En relación con el fármaco <b>'+i+'</b>:</p>'
     st.write(texto,unsafe_allow_html = True)          
     for x in recomendaciones[i]:
         if len(recomendaciones[i][x]) == 0:
-            texto = '<p style="text-indent: 50px; font-family:Cambria; font-size: 15px;">No hay información sobre interacciones con <b>'+x+'</b> para esos alelos.</p>'
+            texto = '<p style="text-indent: 50px; font-family:Arial; font-size: 15px;">No hay información sobre interacciones con <b>'+x+'</b> para esos alelos.</p>'
             st.write(texto,unsafe_allow_html = True)
         else:
-            texto = '<p style="text-indent: 50px; font-family:Cambria; font-size: 15px;">El fenotipo para <b>'+x+'</b> es '+recomendaciones[i][x][0]+'. Recomendación clínica: '+recomendaciones[i][x][1]+' Fuente de información: <a href="'+recomendaciones[i][x][3]+'" target= "_blank">'+recomendaciones[i][x][2]+'</a></p>'
+            texto = '<p style="text-indent: 50px; font-family:Arial; font-size: 15px;">El fenotipo para <b>'+x+'</b> es '+recomendaciones[i][x][0]+'. Recomendación clínica: '+recomendaciones[i][x][1]+' Fuente de información: <a href="'+recomendaciones[i][x][3]+'" target= "_blank">'+recomendaciones[i][x][2]+'</a></p>'
             st.write(texto,unsafe_allow_html = True)
 #--------------------------------------------------------------------------------------------------------------------------   
 texto = '<i><p style="font-family:Arial; font-size: 22px;"><u>Interacciones con otros fármacos</u></p></i>'
 st.write(texto,unsafe_allow_html = True)
 
 for i in relaciones:
-    texto = '<p style="text-indent: 30px; font-family:Cambria; font-size: 15px;">Fármacos metabolizados por <b>'+i+'</b>: '+str(', '.join(relaciones[i]))+'.'+'</p>'
+    texto = '<p style="text-indent: 30px; font-family:Arial; font-size: 15px;">Fármacos metabolizados por <b>'+i+'</b>: '+str(', '.join(relaciones[i]))+'.'+'</p>'
     st.write(texto,unsafe_allow_html = True)
