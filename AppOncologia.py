@@ -11,7 +11,7 @@ import base64
 
 st.set_page_config(layout="wide", page_icon='Logo_pagina(2).png', page_title="Oncology")
 
-st.image("Logo(3).png")
+st.image("Logo(3).png", align = center)
 
 left, right = st.columns([1,1], gap="large")
 
