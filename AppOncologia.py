@@ -34,7 +34,7 @@ with left:
 #==================================================================================================================================
 
 with right:
-    texto = '<p></p><i><p style="font-family:Arial; font-size: 25px;">Datos patológicos</p></i>'
+    texto = '<p></p><i><p style="font-family:Arial; font-size: 25px;">DATOS ACERCA DE SU PATOLOGÍA</p></i>'
     st.write(texto,unsafe_allow_html = True)
 
     enfermedad = st.text_input(label="ENFERMEDAD ACTUAL", placeholder = "Escriba la principal patología del paciente")
